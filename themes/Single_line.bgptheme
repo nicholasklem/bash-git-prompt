@@ -66,7 +66,8 @@ define_undefined_git_prompt_colors() {
   if [[ -z ${GIT_PROMPT_VIRTUALENV} ]]; then GIT_PROMPT_VIRTUALENV="(${Blue}_VIRTUALENV_${ResetColor}) "; fi
 
   # _LAST_COMMAND_INDICATOR_ will be replaced by the appropriate GIT_PROMPT_COMMAND_OK OR GIT_PROMPT_COMMAND_FAIL
-  if [[ -z ${GIT_PROMPT_START_USER} ]]; then GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}${ResetColor} ${Yellow}${PathShort}${ResetColor}"; fi
+#   if [[ -z ${GIT_PROMPT_START_USER} ]]; then GIT_PROMPT_START_USER="\033]0;${SHORTHOST}\007_LAST_COMMAND_INDICATOR_ ${White}${ResetColor}${green}\h${ResetColor} ${Yellow}${PathShort}${ResetColor}"; fi
+  if [[ -z ${GIT_PROMPT_START_USER} ]]; then GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}${ResetColor}${green}\h${ResetColor} ${Yellow}${PathShort}${ResetColor}"; fi
   if [[ -z ${GIT_PROMPT_START_ROOT} ]]; then GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"; fi
   if [[ -z ${GIT_PROMPT_END_USER} ]]; then GIT_PROMPT_END_USER="${ResetColor} $ "; fi
   if [[ -z ${GIT_PROMPT_END_ROOT} ]]; then GIT_PROMPT_END_ROOT="${BoldRed} # "; fi
